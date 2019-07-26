@@ -36,11 +36,14 @@ public class MyStepDefinitions extends Base {
 		
     	Thread.sleep(3000);
     }
+	
+	
 
 	@Then("^\"([^\"]*)\" results are displayed$")
     public void something_results_are_displayed(String strArg1) throws Throwable {
         
     	Assert.assertTrue(driver.findElement(By.cssSelector("h4.product-name")).getText().contains(strArg1));
+    	System.out.println("hello");
     }
 	
 
