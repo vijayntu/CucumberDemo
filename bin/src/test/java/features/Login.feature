@@ -1,25 +1,21 @@
-Feature: Portal Login
+Feature: Application Login
 
-Background: 
-Given Validate the browser
-When Browser is triggered
-Then Check browser is displayed
 
-@PortalTest
+@MobileTest
 Scenario: Home page default login
 Given User is on NetBanking landing page
 When User login into application with "Vijay" and password "1234"
 Then Home page is populated
 And Cards displayed are "true"
 
-@APITest
+@WebTest
 Scenario: Home page default login cards not displayed
 Given User is on NetBanking landing page
 When User login into application with "John" and password "4321"
 Then Home page is populated
 And Cards displayed are "false"
 
-@APITest
+@MobileTest
 Scenario: Home page default register
 Given User is on NetBanking landing page
 When User sign up with following details
@@ -27,21 +23,7 @@ When User sign up with following details
 Then Home page is populated
 And Cards displayed are "false"
 
-@APITest
-Scenario Outline: Home page default login with multiple users
-Given User is on NetBanking landing page
-When User login in to application with <Username> and password <password>
-Then Home page is populated
-And Cards displayed are "true"
-
-@APITest
-Scenario Outline: Home page default login with multiple users
-Given User is on NetBanking landing page
-When User login in to application with <Username> and password <password>
-Then Home page is populated
-And Cards displayed are "true"
-
-@APITest
+@WebTest
 Scenario Outline: Home page default login with multiple users
 Given User is on NetBanking landing page
 When User login in to application with <Username> and password <password>
