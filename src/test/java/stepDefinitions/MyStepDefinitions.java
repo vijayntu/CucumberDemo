@@ -44,6 +44,7 @@ public class MyStepDefinitions extends Base {
         
     	Assert.assertTrue(driver.findElement(By.cssSelector("h4.product-name")).getText().contains(strArg1));
     	System.out.println("hello");
+    	System.out.println("hello");
     }
 	
 
